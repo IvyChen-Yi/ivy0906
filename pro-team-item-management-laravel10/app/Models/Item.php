@@ -15,8 +15,18 @@ class Item extends Model
         'user_id',
         'name',
         'type',
+        'series',
+        'stock',
+        'manufactured_date',
+        'expiry_date',
         'detail',
+        'p_id',
+        'p_name',
+        'p_stock',
+        'p_date',
+        'p_order',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.

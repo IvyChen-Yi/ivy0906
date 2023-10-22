@@ -70,6 +70,7 @@ return [
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => '商品管理',
 
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Logo
@@ -293,6 +294,16 @@ return [
         [
             'text' => '商品一覧',
             'url'  => 'items',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => 'ユーザー管理',
+            'url'  => 'users',
+            'icon' => 'fas fa-gamepad',
+        ],
+        [
+            'text' => '注文管理',
+            'url'  => 'orders',
             'icon' => 'fas fa-gamepad',
         ],
 
