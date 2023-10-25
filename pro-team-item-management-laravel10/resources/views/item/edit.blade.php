@@ -13,7 +13,7 @@
 <div class="col-md-6">
 <div class="card">
 
-<form method="POST">
+<form method="POST" action="/item/update/{{$item->id}}">
 @csrf
 
 <div class="card-body">
@@ -53,17 +53,17 @@
 
     <div class="form-group">
       <label for="manufactured_date">製造年月日</label>
-      <input type="date" class="form-control" id="manufactured_date" name="manufactured" value="{{old('manufactured',$item->manufactured)}}">
+      <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured',$item->manufactured)}}">
     </div>
 
     <div class="form-group">
       <label for="expiry_date">有効期限</label>
-      <input type="date" class="form-control" id="expiry_date" name="expiry" value="{{old('expiry',$item->expiry)}}">
+      <input type="date" class="form-control" id="expiry_date" name="expiry_date" value="{{old('expiry',$item->expiry)}}">
     </div>
 
     <div class="form-group">
       <label for="detail">商品詳細</label>
-      <input type="text" class="form-control" id="detail" name="detail" value="{{old('detail',$item->detail)}}">
+      <textarea type="text" class="form-control" id="detail" name="detail" >{{old('detail',$item->detail)}}</textarea>
     </div>
 </div>
  
@@ -72,18 +72,19 @@
   <div class="btn-group" >
 
    <div class="card-footer">
-    <a href="/items/edit/{{$item->id}}"><button type="submit" class="btn btn-primary" >修正する</button></a>
+    <button type="submit" class="btn btn-primary" >修正する</button>
    </div>
+</form>
 
    <div class="card-footer">
-    <a href="/items"><button type="submit" class="btn btn-primary" >商品一覧に戻る</button></a>
+    <a href="/item"><button type="submit" class="btn btn-primary" >商品一覧に戻る</button></a>
    </div>
 
 
   </div>
+
 </div>
 
-</form>
 
 
 </div>

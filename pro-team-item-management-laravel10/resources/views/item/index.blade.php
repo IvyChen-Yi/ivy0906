@@ -15,65 +15,12 @@
                     <h3 class="card-title">商品一覧</h3>
                     <div class="card-tools d-flex ">
                         <div class="input-group input-group-sm">
+                            
                             <div class="input-group-append">
-                            <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#SearchModal" data-bs-whatever="@mdo">商品検索</button>
+                                <a href="{{ url('item/add') }}" class="btn btn-default">商品登録</a>
                             </div>
-                            <!--Modal-->
-
-<div class="modal fade" id="SearchModal" tabindex="-1" aria-labelledby="SearchModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="SearchModal">商品検索</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="type" class="col-form-label">種別</label>
-            <br>
-            <select id="type" class="form-control">
-                <option value="">種別を選択ください</option>
-                <option value="">洗顔</option>
-                <option value="">化粧水</option>
-                <option value="">美容液</option>
-                <option value="">乳液・クリーム</option>
-                <option value="">マスク</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="series" class="col-form-label">シリーズ</label>
-            <br>
-            <select id="series" class="form-control">
-                <option value="">種別を選択ください</option>
-                <option value="">基礎シリーズ</option>
-                <option value="">美白シリーズ</option>
-                <option value="">エイジングケアシリーズ</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">有効期限</label>
-            <br>
-            <input type="radio" id="3mon" name="s-date" value="3mon" checked>
-            <label for="3mon">三ヶ月以内</label>
-            <input type="radio" id="2mon" name="s-date" value="2mon" checked>
-            <label for="2mon">二ヶ月以内</label>
-            <input type="radio" id="1mon" name="s-date" value="1mon" checked>
-            <label for="1mon">一ヶ月以内</label>
-
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">一覧に戻る</button>
-        <button type="button" class="btn btn-primary">検索</button>
-      </div>
-    </div>
-  </div>
-</div>
-                            <!--Modal end-->
                             <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="{{ url('item/OrderAdd') }}" class="btn btn-default">商品発注</a>
                             </div>
                         </div>
                    
@@ -97,41 +44,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($items as $item)
+                          
+                            @foreach ($items as $index=> $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>
-                                        @switch($item->type)
-                                        @case(1)
-                                        洗顔
-                                        @break
-                                        @case(2)
-                                        化粧水
-                                        @break
-                                        @case(3)
-                                        美容液
-                                        @break
-                                        @case(4)
-                                        乳液．クリーム
-                                        @break
-                                        @case(5)
-                                        マスク
-                                        @break
-                                    @endswitch
-                                    </td>
-                                    <td>@switch($item->series)
-                                        @case(91)
-                                        基礎シリーズ
-                                        @break
-                                        @case(92)
-                                        美白シリーズ
-                                        @break
-                                        @case(93)
-                                        エイジングケアシリーズ
-                                        @break
-                                        @endswitch
-                                        </td>
+                                    <td>{{ $types[$item->type] }}</td>
+                                    <td>{{ $series[$item->series] }}</td>
                                     <td>{{number_format($item->stock) }}</td>
                                     <td>{{ $item->manufactured_date }}</td>
                                     <td>{{ $item->expiry_date }}</td>

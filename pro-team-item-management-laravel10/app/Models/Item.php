@@ -25,8 +25,9 @@ class Item extends Model
         'p_stock',
         'p_date',
         'p_order',
-    ];
 
+    ];
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for serialization.

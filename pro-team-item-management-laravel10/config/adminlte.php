@@ -293,17 +293,17 @@ return [
     'menu' => [
         [
             'text' => '商品一覧',
-            'url'  => 'items',
+            'url'  => '/item',
             'icon' => 'fas fa-gamepad',
         ],
         [
             'text' => 'ユーザー管理',
-            'url'  => 'users',
+            'url'  => '/user',
             'icon' => 'fas fa-gamepad',
         ],
         [
             'text' => '注文管理',
-            'url'  => 'orders',
+            'url'  => '/item/order_list',
             'icon' => 'fas fa-gamepad',
         ],
 
