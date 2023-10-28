@@ -27,23 +27,33 @@
   <div class="form-group">
    <label for="p_name">商品名</label>
     <input type="text" class="form-control" id="p_name" name="p_name" value="{{ old('p_name', $order->p_name)}}">
+    @error('p_name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
   </div>
 
 
     <div class="form-group">
       <label for="p_stock">発注数量</label>
       <input type="text" class="form-control" id="p_stock" name="p_stock" value="{{old('p_stock', $order->p_stock)}}">
+      @error('p_stock')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
     </div>
 
     <div class="form-group">
       <label for="p_date">入荷予定日</label>
       <input type="date" class="form-control" id="p_date" name="p_date" value="{{old('p_date', $order->p_date)}}">
+      @error('p_date')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
     </div>
 
 
     <div class="form-group">
       <label for="p_order">注文者</label>
       <p name="p_order">{{\Auth::user()->name}}</p>
+
     </div>
 </div>
  

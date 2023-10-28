@@ -20,6 +20,9 @@
   <div class="form-group">
    <label for="name">商品名</label>
     <input type="text" class="form-control" id="name" name="name" value="{{ old('name',$item->name) }}">
+    @error('name')
+    <div class="text-danger">{{ $message }}</div>
+     @enderror
   </div>
 
    <div class="form-group">
@@ -31,7 +34,9 @@
        @endforeach
 
         </select>
-        
+        @error('type')
+        <div class="text-danger">{{ $message }}</div>
+        @enderror
    </div>
 
     <div class="form-group">
@@ -44,26 +49,41 @@
 
         
       </select>
+      @error('series')
+        <div class="text-danger">{{ $message }}</div>
+        @enderror
 </div>
 
     <div class="form-group">
       <label for="stock">在庫数</label>
       <input type="text" class="form-control" id="stock" name="stock" value="{{old('stock',$item->stock)}}">
+      @error('stock')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
     </div>
 
     <div class="form-group">
       <label for="manufactured_date">製造年月日</label>
       <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured',$item->manufactured)}}">
+      @error('manufactured_date')
+        <div class="text-danger">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group">
       <label for="expiry_date">有効期限</label>
       <input type="date" class="form-control" id="expiry_date" name="expiry_date" value="{{old('expiry',$item->expiry)}}">
+      @error('expiry_date')
+        <div class="text-danger">{{ $message }}</div>
+        @enderror
     </div>
 
     <div class="form-group">
       <label for="detail">商品詳細</label>
       <textarea type="text" class="form-control" id="detail" name="detail" >{{old('detail',$item->detail)}}</textarea>
+      @error('detail')
+        <div class="text-danger">{{ $message }}</div>
+        @enderror
     </div>
 </div>
  

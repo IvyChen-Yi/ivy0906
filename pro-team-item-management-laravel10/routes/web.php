@@ -20,13 +20,17 @@ use App\Http\Auth\Controllers;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//商品管理画表示
+Route::get('/item', [App\Http\Controllers\ItemController::class, 'index']);
+Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail']);
 
 
 //ログインしているユーザーのみ許可
 
+    
 
-    //商品管理画表示
-    Route::get('/item', [App\Http\Controllers\ItemController::class, 'index']);
+Route::group(['middleware' => ['auth','can:管理者']],function(){
+
     Route::get('/item/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/item/store', [App\Http\Controllers\ItemController::class, 'store']);
     Route::get('/item/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
@@ -50,8 +54,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
     Route::post('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 
 
-    Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail']);
 
-
+});
    
 

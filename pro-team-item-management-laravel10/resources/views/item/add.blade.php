@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="type">種別</label>
                             <select class="form-control" id="type" name="type">
-                                <option value="99"> 選択してください </option>
+                                <option value=""   @if(old('type') == '') selected @endif> </option>
                                 <option value="1"  @if(old('type') == '1') selected @endif>洗顔</option>
                                 <option value="2"  @if(old('type') == '2') selected @endif>化粧水</option>
                                 <option value="3"  @if(old('type') == '3') selected @endif>美容液</option>
@@ -51,6 +51,7 @@
                         <div class="form-group">
                             <label for="series">シリーズ</label>
                             <select class="form-control" id="series" name="series" value="{{ old('series') }}">
+                                <option value=""    @if(old('series') == '') selected @endif></option>
                                 <option value="91"  @if(old('series') == '91') selected @endif>基礎シリーズ</option>
                                 <option value="92"  @if(old('series') == '92') selected @endif>美白シリーズ</option>
                                 <option value="93"  @if(old('series') == '93') selected @endif>エイジングケアシリーズ</option>

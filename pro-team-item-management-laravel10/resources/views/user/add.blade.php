@@ -24,15 +24,24 @@
          <th>名前</th>
          <td><input type="text" name="name"  required></td>
       </tr>
+      @error('name')
+       <div class="text-danger">{{ $message }}</div>
+       @enderror
       <tr>
          <th>メール</th>
          <td><input type="text" name="email"  required></td>
       </tr>
+      @error('email')
+       <div class="text-danger">{{ $message }}</div>
+       @enderror
       <tr>
          <th>権限</th>
          <td>    
             <input type="radio" name="role" required value="1" >管理者
-            <input type="radio" name="role" required value="0" >利用者          
+            <input type="radio" name="role" required value="0" >利用者     
+       @error('role')
+       <div class="text-danger">{{ $message }}</div>
+       @enderror    
       </td>
       </tr>
       

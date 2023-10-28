@@ -23,17 +23,18 @@ class UserController extends Controller
         $this->validate($request, [
         'name' => 'required',
         'email'=>'required',
-        'role'=>'required',
+        'password'=>'required|min:8',
     ],
     [
         'name.required' => '*名前は必須です',
         'name.max' => '*名前は100文字以内です',
         'email' => '*メールは必須です',
-        'role'=>'*権限は必須です',
+        'password.required'=>'*パスワードは必須です',
+        'password.min'=>'*パスワードは8英数字以上です',
     ]);
 
         User::create([
-            //'id' => Auth::id(),
+            'id' => Auth::id(),
             'name' => $request->name,
             'email' => $request->email, 
             'role' => $request->role,
@@ -59,6 +60,25 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required|max:100', // requiredは必須
+            'email'=>'required',
+            'role'=>'required|max:1',
+            
+
+        ],
+        [
+            'name.required'=>'*名前は必要です。',
+            'name.max'=>'*名前名は100文字以内です。',
+            'email.required'=>'*メールアドレスは必要です。',
+            'role.required'=>'*権限は必要です',
+            'role.max'=>'*権限は必要です',
+
+
+         ]);
+
+        
+
         $user=User::findOrFail($id);
         $user->name= $request->name;
         $user->email= $request->email;
