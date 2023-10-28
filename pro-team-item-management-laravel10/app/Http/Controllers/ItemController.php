@@ -13,6 +13,7 @@ class ItemController extends Controller
     public function index()
     {
         $types = [
+            0 =>'',
             1 => '洗顔',
             2 => '化粧水',
             3 => '美容液',
@@ -20,6 +21,7 @@ class ItemController extends Controller
             5 => 'マスク',
         ];
         $series =[
+            01=>'',
             91=>'基礎シリーズ',
             92=>'美白シリーズ',
             93=>'エイジングケアシリーズ',
