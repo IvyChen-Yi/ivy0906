@@ -29,7 +29,6 @@ Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'de
 
     
 
-Route::group(['middleware' => ['auth','can:管理者']],function(){
 
     Route::get('/item/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/item/store', [App\Http\Controllers\ItemController::class, 'store']);
@@ -55,6 +54,5 @@ Route::group(['middleware' => ['auth','can:管理者']],function(){
 
 
 
-});
    
 
