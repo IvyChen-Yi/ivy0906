@@ -28,7 +28,7 @@ Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'de
 //ログインしているユーザーのみ許可
 
     
-
+Route::group(['middleware' => ['auth','can:管理者']],function(){
 
     Route::get('/item/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/item/store', [App\Http\Controllers\ItemController::class, 'store']);
@@ -51,7 +51,7 @@ Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'de
     Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
     Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
     Route::post('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
-
+});
 
 
    

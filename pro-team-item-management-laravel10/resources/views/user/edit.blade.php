@@ -13,7 +13,7 @@
  <body>
    <div class="container" style="text-align:center">
    <h1>ユーザー編集画面</h1>
-    <a href="/user/index" >戻る</a>
+    <a href="/user" >戻る</a>
    <div class="row justify-content-center">
         <div class="col-6">
             <div class="card">
