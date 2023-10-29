@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('p_name',100);
             $table->integer('p_stock');
             $table->date('p_date');
+            $table->string('p_order');
+
         });
     }
 
