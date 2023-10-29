@@ -20,11 +20,7 @@ class Item extends Model
         'manufactured_date',
         'expiry_date',
         'detail',
-        'p_id',
-        'p_name',
-        'p_stock',
-        'p_date',
-        'p_order',
+
 
     ];
     public $timestamps = false;
