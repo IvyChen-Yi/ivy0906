@@ -106,7 +106,7 @@ class ItemController extends Controller
         $request->validate([
             'name' => 'required|max:100', // requiredは必須
             'type' => 'required|max:1',
-            'series' => 'required|max:1',
+            'series' => 'required',
             'stock' => 'required|numeric',
             'detail' => 'required|max:500',
             'manufactured_date'=>'required',
@@ -120,7 +120,6 @@ class ItemController extends Controller
             'type.required'=>'*種別は必須です',
             'type.max' => '*種別は必須です',
             'series.required'=> '*シリーズは必須です',
-            'series.max' => '*シリーズは必須です',
             'stock.required' => '*在庫数は必須です',
             'stock.numeric' => '*入力は数字のみです',
             'detail.required' => '*商品詳細は必須です',
