@@ -82,10 +82,7 @@ class ItemController extends Controller
             'detail' => $request->detail,
             'manufactured_date' =>$request->manufactured_date,
             'expiry_date'=>$request->expiry_date,
-            'p_id'=>$request->p_id,
-            'p_name'=>$request->p_name,
-            'p_stock'=>$request->p_stock,
-            'p_date'=>$request->p_date,
+   
         ]);
         
 
