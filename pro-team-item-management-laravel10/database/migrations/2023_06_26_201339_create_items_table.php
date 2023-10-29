@@ -21,10 +21,7 @@ return new class extends Migration
             $table->string('detail',500);
             $table->date('manufactured_date');
             $table->date('expiry_date');
-            $table->integer('p_id');
-            $table->string('p_name',100);
-            $table->integer('p_stock');
-            $table->date('p_date');
+    
         });
     }
 
