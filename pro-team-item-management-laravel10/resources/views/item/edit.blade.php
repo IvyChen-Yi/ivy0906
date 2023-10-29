@@ -28,7 +28,7 @@
    <div class="form-group">
      <label for="type">種別</label>
       <select class="form-control" id="type" name="type">
-      @foreach([1 => '洗顔', 2 => '化粧水', 3 => '美容液', 4 => '乳液．クリーム', 5 => 'マスク',] as $value => $label)
+      @foreach([0=>'', 1 => '洗顔', 2 => '化粧水', 3 => '美容液', 4 => '乳液．クリーム', 5 => 'マスク',] as $value => $label)
 
        <option value="{{ $value }}" {{ old('type', $item->type) == $value ? 'selected' : '' }}>{{ $label }}</option>
        @endforeach
@@ -42,7 +42,7 @@
     <div class="form-group">
       <label for="series">シリーズ</label>
       <select class="form-control" id="series" name="series">
-      @foreach([91 => '基礎シリーズ', 92 => '美白シリーズ', 93 => 'エイジングケアシリーズ',] as $value => $label)
+      @foreach([01=>'', 91 => '基礎シリーズ', 92 => '美白シリーズ', 93 => 'エイジングケアシリーズ',] as $value => $label)
 
       <option value="{{ $value }}" {{ old('series', $item->series) == $value ? 'selected' : '' }}>{{ $label }}</option>
       @endforeach
