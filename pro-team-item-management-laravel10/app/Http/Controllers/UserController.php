@@ -59,21 +59,19 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|max:100', // requiredは必須
+            'name' => 'required', // requiredは必須
             'email'=>'required',
             'password'=>'required|min:8',
-            'role'=>'required|max:1',
+            'role'=>'required',
             
 
         ],
         [
             'name.required'=>'*名前は必要です。',
-            'name.max'=>'*名前名は100文字以内です。',
             'email.required'=>'*メールアドレスは必要です。',
             'password.required'=>'*パスワードは必要です。',
             'password.min'=>'*パスワードは8文字以上です。',
             'role.required'=>'*権限は必要です',
-            'role.max'=>'*権限は必要です',
 
 
          ]);
