@@ -22,21 +22,21 @@
       
       <tr>
          <th>名前</th>
-         <td><input type="text" name="name"  required></td>
+         <td><input type="text" name="name" ></td>
       </tr>
       @error('name')
        <div class="text-danger">{{ $message }}</div>
        @enderror
       <tr>
          <th>メール</th>
-         <td><input type="text" name="email"  required></td>
+         <td><input type="text" name="email"  ></td>
       </tr>
       @error('email')
        <div class="text-danger">{{ $message }}</div>
        @enderror
        <tr>
          <th>パスワード</th>
-         <td><input type="password" name="password"  required></td>
+         <td><input type="password" name="password"  ></td>
       </tr>
       @error('password')
        <div class="password">{{ $message }}</div>
@@ -45,8 +45,8 @@
       <tr>
          <th>権限</th>
          <td>    
-            <input type="radio" name="role" required value="1" >管理者
-            <input type="radio" name="role" required value="0" >利用者     
+            <input type="radio" name="role"  value="1" >管理者
+            <input type="radio" name="role"  value="0" >利用者     
        @error('role')
        <div class="text-danger">{{ $message }}</div>
        @enderror    

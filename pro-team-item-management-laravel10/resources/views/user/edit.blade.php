@@ -27,17 +27,23 @@
       </tr>
       <tr>
          <th>名前</th>
-         <td><input type="text" name="name" value="{{$user->name}}" required></td>
+         <td><input type="text" name="name" value="{{$user->name}}" ></td>
+         @error('name')
+       <div class="text-danger">{{ $message }}</div>
+       @enderror
       </tr>
       <tr>
          <th>メール</th>
-         <td><input type="text" name="email" value="{{$user->email}}" required></td>
+         <td><input type="text" name="email" value="{{$user->email}}" ></td>
+         @error('email')
+       <div class="text-danger">{{ $message }}</div>
+       @enderror
       </tr>
       <tr>
          <th>権限</th>
          <td>
-            <input type="radio" name="role" required value="1" @if($user -> role==1) checked @endif>管理者
-            <input type="radio" name="role" required value="0" @if($user -> role==0) checked @endif>利用者
+            <input type="radio" name="role"  value="1" @if($user -> role==1) checked @endif>管理者
+            <input type="radio" name="role"  value="0" @if($user -> role==0) checked @endif>利用者
 
 
             
