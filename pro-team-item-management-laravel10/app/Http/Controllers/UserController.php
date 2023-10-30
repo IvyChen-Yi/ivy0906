@@ -63,6 +63,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|max:100', // requiredは必須
             'email'=>'required',
+            'password'=>'required|min:8',
             'role'=>'required|max:1',
             
 
@@ -71,6 +72,8 @@ class UserController extends Controller
             'name.required'=>'*名前は必要です。',
             'name.max'=>'*名前名は100文字以内です。',
             'email.required'=>'*メールアドレスは必要です。',
+            'password.required'=>'*パスワードは必要です。',
+            'password.min'=>'*パスワードは8文字以上です。',
             'role.required'=>'*権限は必要です',
             'role.max'=>'*権限は必要です',
 
@@ -82,6 +85,7 @@ class UserController extends Controller
         $user=User::findOrFail($id);
         $user->name= $request->name;
         $user->email= $request->email;
+        $user->password=$request->password;
         $user->role= $request->role;
         $user->save();
         return redirect('/user')->with('success', '更新しました');

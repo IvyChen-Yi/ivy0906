@@ -34,6 +34,20 @@
       @error('email')
        <div class="text-danger">{{ $message }}</div>
        @enderror
+       <tr>
+         <th>パスワード</th>
+         <td><input type="password" name="password"  required></td>
+      </tr>
+      @error('email')
+       <div class="password">{{ $message }}</div>
+       @enderror
+       <tr>
+         <th>パスワード再確認</th>
+         <td><input type="password" name="password-confirmed"  required></td>
+      </tr>
+      @error('email')
+       <div class="password-confirmed">{{ $message }}</div>
+       @enderror
       <tr>
          <th>権限</th>
          <td>    
