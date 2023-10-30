@@ -34,11 +34,10 @@ class UserController extends Controller
     ]);
 
         User::create([
-            'id' => Auth::id(),
             'name' => $request->name,
             'email' => $request->email, 
             'role' => $request->role,
-            'password'=>'',
+            'password'=>$request->password,
             
 
         ]);
