@@ -24,12 +24,15 @@ class UserController extends Controller
         'name' => 'required',
         'email'=>'required',
         'password'=>'required|min:8',
+        'role'=>'required',
     ],
     [
         'name.required' => '*名前は必須です',
         'email' => '*メールは必須です',
         'password.required'=>'*パスワードは必須です',
         'password.min'=>'*パスワードは8英数字以上です',
+        'role'=>'*権限は必須です',
+
     ]);
 
         User::create([
@@ -61,10 +64,13 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email'=>'required',
+            'role'=>'required',
         ],
         [
             'name.required' => '*名前は必須です',
             'email' => '*メールは必須です',
+            'role'=>'*権限は必須です',
+
             
         ]);
     
