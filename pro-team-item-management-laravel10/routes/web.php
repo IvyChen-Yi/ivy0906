@@ -27,7 +27,7 @@ Route::get('/item/detail/{id}', [App\Http\Controllers\ItemController::class, 'de
 
 //ログインしているユーザーのみ許可
 
-    
+  
 Route::group(['middleware' => ['auth','can:管理者']],function(){
 
     Route::get('/item/add', [App\Http\Controllers\ItemController::class, 'add']);

@@ -300,11 +300,14 @@ return [
             'text' => 'ユーザー管理',
             'url'  => '/user',
             'icon' => 'fas fa-gamepad',
+            'can'=>'管理者',
         ],
         [
             'text' => '注文管理',
             'url'  => '/item/order_list',
             'icon' => 'fas fa-gamepad',
+            'can'=>'管理者',
+
         ],
 
         // AdminLTEデフォルト

@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //ここから下senga追記した
+        //
         $this->registerPolicies();
 
         // 管理者のみ許可 (0=利用者/1=管理者)

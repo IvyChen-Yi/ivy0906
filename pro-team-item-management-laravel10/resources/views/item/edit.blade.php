@@ -73,7 +73,7 @@
 
     <div class="form-group">
       <label for="manufactured_date">製造年月日</label>
-      <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured_date',$item->manufactured_datw)}}">
+      <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured_date',$item->manufactured_date)}}">
       @error('manufactured_date')
         <div class="text-danger">{{ $message }}</div>
         @enderror
