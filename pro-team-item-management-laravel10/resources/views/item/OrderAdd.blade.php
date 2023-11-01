@@ -27,7 +27,7 @@
 
                         <div class="form-group">
                             <label for="p_id">商品番号</label>
-                            <input type="text" class="form-control" id="p_id" name="p_id" >{{old('id')}}
+                            <input type="text" class="form-control" id="p_id" name="p_id" >{{old('p_id')}}
                             @error('p_id')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label for="p_name">商品名</label>
-                            <input type="text" class="form-control" id="p_name" name="p_name" >{{ old('name')}}
+                            <input type="text" class="form-control" id="p_name" name="p_name" >{{ old('p_name')}}
                             @error('p_name')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -44,7 +44,7 @@
 
                         <div class="form-group">
                             <label for="p_stock">発注数量</label>
-                            <input type="text" class="form-control" id="p_stock" name="p_stock" >{{ old('stock') }}
+                            <input type="text" class="form-control" id="p_stock" name="p_stock" >{{ old('p_stock') }}
                             @error('p_stock')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -52,7 +52,7 @@
 
                         <div class="form-group">
                             <label for="p_date">入荷予定日</label>
-                            <input type="date" class="form-control" id="p_date" name="p_date" >
+                            <input type="date" class="form-control" id="p_date" name="p_date" >{{old('p_date')}}
                             @error('p_date')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
