@@ -60,10 +60,7 @@
 
                         <div class="form-group">
                             <label for="p_order">注文者</label>
-                            <input type="text" class="form-control" id="p_order" name="p_order" value="{{\Auth::user()->name}}">
-                            @error('p_order')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <p name="p_order">{{\Auth::user()->name}}</p>
                         </div>
 
                     <div class="btn-group">

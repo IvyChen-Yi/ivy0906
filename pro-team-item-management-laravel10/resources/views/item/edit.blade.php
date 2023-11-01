@@ -73,7 +73,7 @@
 
     <div class="form-group">
       <label for="manufactured_date">製造年月日</label>
-      <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured',$item->manufactured)}}">
+      <input type="date" class="form-control" id="manufactured_date" name="manufactured_date" value="{{old('manufactured_date',$item->manufactured_datw)}}">
       @error('manufactured_date')
         <div class="text-danger">{{ $message }}</div>
         @enderror
@@ -81,7 +81,7 @@
 
     <div class="form-group">
       <label for="expiry_date">有効期限</label>
-      <input type="date" class="form-control" id="expiry_date" name="expiry_date" value="{{old('expiry',$item->expiry)}}">
+      <input type="date" class="form-control" id="expiry_date" name="expiry_date" value="{{old('expiry_date',$item->expiry_date)}}">
       @error('expiry_date')
         <div class="text-danger">{{ $message }}</div>
         @enderror
