@@ -25,5 +25,7 @@ class Order extends Model
     public $timestamps = false;
     protected $primaryKey = 'p_id';
 
-
+    public function user(){
+       return $this->belongsTo('App\Models\User','p_order');
+    }
 }
