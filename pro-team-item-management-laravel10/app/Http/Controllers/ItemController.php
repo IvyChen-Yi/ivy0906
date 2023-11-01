@@ -173,7 +173,7 @@ class ItemController extends Controller
     {
 
         $this->validate($request, [
-            'p_id'=>'required',
+            'p_id'=>'required|numeric',
             'p_name' => 'required|max:100', // requiredは必須
             'p_stock' => 'required|numeric',
             'p_date'=>'required',
@@ -182,6 +182,7 @@ class ItemController extends Controller
         ],
         [
             'p_id.required' => '*商品番号は必須です',
+            'p_id.numeric' => '*入力は数字のみです',
             'p_name.required' => '*商品名は必須です',
             'p_name.max' => '*商品名は100文字以内です',
             'p_stock.required' => '*発注数は必須です',
