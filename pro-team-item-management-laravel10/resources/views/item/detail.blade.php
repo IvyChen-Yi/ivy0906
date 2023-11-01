@@ -83,13 +83,23 @@
   <div class="btn-group" >
 
    <div class="card-footer">
-    <a href="/item/edit/{{$item->id}}"><button type="submit" class="btn-group btn-primary" >修正</button></a>
+    <a href="
+    @if ($user->role==1)
+    /item/edit/{{$item->id}}
+    @else
+    {{url('item')}}
+    @endif
+    "><button type="submit" class="btn-group btn-primary" >修正</button></a>
    </div>
 
    <div class="card-footer">
    <form method="POST" action="/item/destroy/{{$item->id}}" >
         @csrf
-        <button type="button" class="btn-group btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal" >削除</button>
+        @if ($user->role==1)
+        <button type="button" class="btn-group btn-primary"data-bs-toggle="modal" data-bs-target="#deleteModal">削除</button>
+        @else
+        <a href="{{url('item')}}"><button type="button" class="btn-group btn-primary">削除</button></a>
+        @endif
   </form>
    </div>
    <div class="card-footer">

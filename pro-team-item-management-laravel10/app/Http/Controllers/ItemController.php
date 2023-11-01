@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item; // Itemモデルをインポート
 use App\Models\Order;
+use App\Models\User;
 use App\Rules\Hankaku;
 use Illuminate\Support\Facades\Auth;
 class ItemController extends Controller
 
 {
     // 商品一覧表示
-    public function index()
+    public function index(Request $request)
     {
         $types = [
             0 =>'',
@@ -28,8 +29,9 @@ class ItemController extends Controller
             93=>'エイジングケアシリーズ',
         ];
         $items = Item::paginate(10); // ページネーション(10件)
+        $user=$request->user();
 
-        return view('item.index', compact('items', 'types','series'));
+        return view('item.index', compact('items', 'types','series','user'));
     }
 
     // 商品登録フォーム表示
@@ -251,6 +253,9 @@ class ItemController extends Controller
    public function detail(Request $request)
    {
     $item=Item::find($request->id);
-    return view('item.detail',compact('item'));
+    $user=$request->user();
+
+    return view('item.detail',compact('item','user'));
    }
+ 
 }

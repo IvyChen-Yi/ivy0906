@@ -17,11 +17,29 @@
                         <div class="input-group input-group-sm">
                             
                             <div class="input-group-append">
-                                <a href="{{ url('item/add') }}" class="btn btn-default">商品登録</a>
+                                <a href="
+                                @if ($user->role==1)
+                                {{ url('item/add') }}
+                                @else
+                                {{url('item')}}
+                                @endif
+                                " 
+                                class="btn btn-default">商品登録</a>
                             </div>
                             <div class="input-group-append">
-                                <a href="{{ url('item/OrderAdd') }}" class="btn btn-default">商品発注</a>
+                                <a href="
+                                @if($user->role==1)
+                                {{ url('item/OrderAdd') }}
+                                @else
+                                {{url('item')}}
+                                @endif
+                                " 
+                                class="btn btn-default">商品発注</a>
                             </div>
+                            
+                            <div></div>
+                            
+
                         </div>
                    
                         
