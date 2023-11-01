@@ -28,7 +28,7 @@
        <div class="text-danger">{{ $message }}</div>
        @enderror
       <tr>
-         <th>メール</th>
+         <th>メールアドレス</th>
          <td><input type="text" name="email"  ></td>
       </tr>
       @error('email')

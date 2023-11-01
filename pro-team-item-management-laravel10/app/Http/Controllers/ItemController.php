@@ -62,7 +62,7 @@ class ItemController extends Controller
             'type.max' => '*種別は必須です',
             'series.required'=> '*シリーズは必須です',
             'stock.required' => '*在庫数は必須です',
-            'stock.numeric' => '*入力は数字のみです',
+            'stock.numeric' => '*在庫数は数字のみです',
             'detail.required' => '*商品詳細は必須です',
             'detail.max' => '*商品詳細は500文字以内です',
             'manufactured_date.required'=>'*製造年月日は必須です',
@@ -124,7 +124,7 @@ class ItemController extends Controller
             'type.max' => '*種別は必須です',
             'series.required'=> '*シリーズは必須です',
             'stock.required' => '*在庫数は必須です',
-            'stock.numeric' => '*入力は数字のみです',
+            'stock.numeric' => '*在庫数は数字のみです',
             'detail.required' => '*商品詳細は必須です',
             'detail.max' => '*商品詳細は500文字以内です',
             'manufactured_date.required'=>'*製造年月日は必須です',
@@ -184,11 +184,11 @@ class ItemController extends Controller
         ],
         [
             'p_id.required' => '*商品番号は必須です',
-            'p_id.numeric' => '*入力は数字のみです',
+            'p_id.numeric' => '*商品番号は数字のみです',
             'p_name.required' => '*商品名は必須です',
             'p_name.max' => '*商品名は100文字以内です',
             'p_stock.required' => '*発注数は必須です',
-            'p_stock.numeric' => '*入力は数字のみです',
+            'p_stock.numeric' => '*発注数は数字のみです',
             'p_date.required'=>'*入荷予定日は必須です',
             'p_order'=>'*注文者は必須です',
         ]);
@@ -222,6 +222,7 @@ class ItemController extends Controller
     {
         $order = Order::where('p_id', '=', $id)->first();
         $request->validate([
+            
              'p_name' => 'required|max:100', // requiredは必須
              'p_stock' => 'required|numeric',
              'p_date'=>'required',
@@ -230,10 +231,11 @@ class ItemController extends Controller
              'p_name.required' => '*商品名は必須です',
              'p_name.max' => '*商品名は100文字以内です',
              'p_stock.required' => '*発注数は必須です',
-             'p_stock.numeric' => '*入力は数字のみです',
+             'p_stock.numeric' => '*発注数は数字のみです',
              'p_date.required'=>'*入荷予定日は必須です',
         
          ]);
+         $order->p_order=$request->p_order;
         $order->p_name = $request->p_name;
         $order->p_stock = $request->p_stock;
         $order->p_date = $request->p_date;

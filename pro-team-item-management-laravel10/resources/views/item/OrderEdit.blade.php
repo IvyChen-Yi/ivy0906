@@ -60,11 +60,11 @@
 
 
     <div class="form-group">
-      <label for="p_order">注文者</label>
+      <label for="p_order">編集者</label>
       <input type="hidden" name="p_order" value="{{\Auth::user()->id}}">{{\Auth::user()->name}}
-                            @error('p_order')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
+      @error('p_order')
+      <div class="text-danger">{{ $message }}</div>
+      @enderror
 
     </div>
 </div>

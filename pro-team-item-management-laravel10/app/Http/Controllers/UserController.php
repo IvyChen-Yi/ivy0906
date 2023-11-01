@@ -29,7 +29,7 @@ class UserController extends Controller
     [
         'name.required' => '*名前は必須です',
         'name.max' => '*名前は100文字以内です',
-        'email' => '*メールは必須です',
+        'email' => '*メールアドレスは必須です',
         'password.required'=>'*パスワードは必須です',
         'password.min'=>'*パスワードは8英数字以上です',
         'role'=>'*権限は必須です',
@@ -70,7 +70,7 @@ class UserController extends Controller
         [
             'name.required' => '*名前は必須です',
             'name.max' => '*名前は100文字以内です',
-            'email' => '*メールは必須です',
+            'email' => '*メールアドレスは必須です',
             'role'=>'*権限は必須です',
 
             

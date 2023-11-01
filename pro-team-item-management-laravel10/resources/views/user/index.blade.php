@@ -20,7 +20,7 @@
         <tr>
             <th>ID</th>
             <th>名前</th>
-            <th>メール</th>
+            <th>メールアドレス</th>
             <th>権限</th>
             <th>編集</th>
         </tr>

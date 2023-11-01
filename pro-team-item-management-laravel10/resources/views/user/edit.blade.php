@@ -33,7 +33,7 @@
        @enderror
       </tr>
       <tr>
-         <th>メール</th>
+         <th>メールアドレス</th>
          <td><input type="text" name="email" value="{{$user->email}}" ></td>
          @error('email')
        <div class="text-danger">{{ $message }}</div>
