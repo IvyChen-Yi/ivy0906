@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item; // Itemモデルをインポート
 use App\Models\Order;
+use App\Rules\Hankaku;
 use Illuminate\Support\Facades\Auth;
 class ItemController extends Controller
 
@@ -173,7 +174,7 @@ class ItemController extends Controller
 
         $this->validate($request, [
             'p_id'=>'required',
-            'p_name' => 'required|max:100', // requiredは必須
+            'p_name' => 'required|max:100|heroku', // requiredは必須
             'p_stock' => 'required|numeric',
             'p_date'=>'required',
             'p_order'=>'required',
@@ -183,6 +184,7 @@ class ItemController extends Controller
             'p_id.required' => '*商品番号は必須です',
             'p_name.required' => '*商品名は必須です',
             'p_name.max' => '*商品名は100文字以内です',
+            'p_name.heroku'=>'*商品名は半角英数字で入力してください',
             'p_stock.required' => '*発注数は必須です',
             'p_stock.numeric' => '*入力は数字のみです',
             'p_date.required'=>'*入荷予定日は必須です',
@@ -218,12 +220,14 @@ class ItemController extends Controller
     {
         $order = Order::where('p_id', '=', $id)->first();
         $request->validate([
-             'p_name' => 'required', // requiredは必須
+             'p_name' => 'required|max:100|heroku', // requiredは必須
              'p_stock' => 'required|numeric',
              'p_date'=>'required',
          ],
           [
              'p_name.required' => '*商品名は必須です',
+             'p_name.max' => '*商品名は100文字以内です',
+             'p_name.heroku'=>'*商品名は半角英数字で入力してください',
              'p_stock.required' => '*発注数は必須です',
              'p_stock.numeric' => '*入力は数字のみです',
              'p_date.required'=>'*入荷予定日は必須です',

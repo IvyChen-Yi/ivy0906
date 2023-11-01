@@ -124,6 +124,7 @@ return [
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeに正しい形式を指定してください。',
     'uuid'                 => ':attributeに有効なUUIDを指定してください。',
+    'hankaku' => ':attribute は半角英数字で入力してください',
 
 
     /*
