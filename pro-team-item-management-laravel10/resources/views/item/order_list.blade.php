@@ -48,7 +48,7 @@
       <td>{{$order->p_name}}</td>
       <td>{{$order->p_stock}} </td>
       <td>{{$order->p_date}} </td>
-      <td>{{$order->p_order}} </td>
+      <td>{{$order->p_order->p_name}} </td>
 
       <td><a href='/item/OrderEdit/{{$order->p_id}}'><button class="btn btn-outline-secondary">編集</button></a></td>
     </tr>
