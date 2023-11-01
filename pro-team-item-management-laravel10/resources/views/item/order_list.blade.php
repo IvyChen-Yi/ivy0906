@@ -25,7 +25,7 @@
   <thead>
     <tr>
 
-      <th scope="col">商品番号</th>
+      <th scope="col">伝票番号</th>
       <th scope="col">商品名</th>
       <th scope="col">発注数量</th>
       <th scope="col">入荷予定日</th>

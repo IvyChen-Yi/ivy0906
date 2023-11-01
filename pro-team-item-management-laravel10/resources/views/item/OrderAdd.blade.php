@@ -25,13 +25,6 @@
                     @csrf
                     <div class="card-body">
 
-                        <div class="form-group">
-                            <label for="p_id">商品番号</label>
-                            <input type="text" class="form-control" id="p_id" name="p_id" value="{{old('p_id')}}" >
-                            @error('p_id')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
 
                         <div class="form-group">
                             <label for="p_name">商品名</label>

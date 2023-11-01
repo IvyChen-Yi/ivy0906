@@ -28,7 +28,7 @@
 @csrf
 <div class="card-body">
   <div class="form-group">
-   <label for="p_id">商品番号</label>
+   <label for="p_id">伝票番号</label>
    <p name="p_id">{{$order->p_id}}</p>
   </div>
 
